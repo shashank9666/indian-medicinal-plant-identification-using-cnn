@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}">
+    <script src="{{url_for('static',filename='js/bootstrap.js')}}"></script>
+    <link rel="shortcut icon" href="{{url_for('static',filename='image/x-icon.png')}}" type="image/.png">
+</head>
+
+<body class="d-block">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="width: max(400px, 100%); ">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)">Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)">Library</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <form action="{{url_for('home')}}" method="get">
+                            <button  class="btn btn-dark" type="submit" class="nav-link" href="javascript:void(0)">Home</button>
+                        </form>
+                    </li>
+                    <li class="nav-item">
+                        <form action="{{url_for('code')}}" method="get">
+                            <button class="btn btn-dark" type="submit" class="nav-link" href="javascript:void(0)">Code</button>
+                        </form>
+                    </li>
+                </ul>
+                <img src="/static/image/x-icon.png" style="height:30px; width:30px" alt="logo">
+            </div>
+        </div>
+    </nav>
+    <div class="mx-auto flex-column flex-wrap shadow-lg p-3 rounded-3 justify-content-center align-items-center"
+        style="width: max(400px, 80%); margin-top: 150px;">
+        <h1>Medicinal Plant Identification</h1>
+        {% if prediction %}
+        <h2 class="text-dark">{{ prediction }}</h2>
+        {% endif %}
+        {% if predictionUse %}
+        <p class="text-primary">{{ predictionUse }}</p>
+        {% endif %}
+    </div>
+</body>
+
+</html>

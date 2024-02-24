@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}">
+    <script src="{{url_for('static',filename='js/bootstrap.js')}}"></script>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/homepage.css')}}">
+    <link rel="shortcut icon" href="{{url_for('static',filename='image/x-icon.png')}}" type="image/.png">
+</head>
+
+<body>
+    <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)">Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)">Library</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <form action="{{url_for('home')}}" method="get">
+                            <button  class="btn btn-dark" type="submit" class="nav-link" href="javascript:void(0)">Home</button>
+                        </form>
+                    </li>
+                    <li class="nav-item">
+                        <form action="{{url_for('code')}}" method="get">
+                            <button  class="btn btn-dark" type="submit" class="nav-link" href="javascript:void(0)">Code</button>
+                        </form>
+                    </li>
+                </ul>
+                <img src="/static/image/x-icon.png" style="height:30px; width:30px" alt="logo">
+            </div>
+        </div>
+    </nav>
+    <div 
+        class="d-flex flex-column justify-content-center align-self-center align-items-center flex-wrap mx-auto p-4"
+        style="backdrop-filter: blur(10px); border-radius: 20px; width: min(400px, 75%);">
+        <img src="{{url_for('static',filename='image/upload.png')}}" alt="upload"
+            style="height: 100px; width: 100px; opacity:10%; display: block;" class="align-self-center">
+        <form action="/prediction" method="post" enctype="multipart/form-data" id="upload-form"
+            onsubmit="submitForm(event)" class="d-flex flex-wrap justify-content-center align-items-center">
+            <input id="file" class="inputFile" style="align-self: center;" type="file" name="file"
+                accept=".jpg, .jpeg, .png" required>
+            <label for="file">Upload an image</label>
+            <button type="submit" class="btn-light btn text-warning" id="submit">submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
