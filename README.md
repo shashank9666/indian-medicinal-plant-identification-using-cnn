@@ -1,7 +1,7 @@
 # Indian Medicinal Plant Identification using CNN
 Project Description : This project aims to identify Indian medicinal plants using Convolutional Neural Networks (CNN). The project uses a Flask backend to serve the model and provide an interactive interface for users to upload images of plants for identification.  
 
-# Dataset The dataset used in this project consists of images of various Indian medicinal plants. You can find the dataset [here]  
+ Dataset :The dataset used in this project consists of images of various Indian medicinal plants. You can find the dataset [here]  
 https://www.kaggle.com/datasets/aryashah2k/indian-medicinal-leaves-dataset
 
 # Installation and Setup
