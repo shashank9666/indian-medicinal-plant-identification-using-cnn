@@ -7,7 +7,7 @@ https://www.kaggle.com/datasets/aryashah2k/indian-medicinal-leaves-dataset
 # Installation and Setup
 1. Clone the repository to your local machine.
    make a folder  called as 'static' and make 3 subfolders 'css','js','image' add files like javascript to js, add css files to css , image files to image, next create another folder named 'templates' in  same 
-   directory where static was placed , ad html files to it
+   directory where static was placed , add html files to it
 3. Install the necessary dependencies using pip:
 4. pip install flask , pip insatll tensorflow, pip install pillow ,etc
 5. Run the Flask application:     ``` py app.py     ```
