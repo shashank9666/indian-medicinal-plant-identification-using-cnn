@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+
+    <!-- Bootstrap (only for navbar) -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/bootstrap.css') }}"
+    />
+
+    <!-- Your custom CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/homepage.css') }}"
+    />
+
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='image/x-icon.png') }}"
+    />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{{ url_for('index') }}">
+          <img
+            src="{{ url_for('static', filename='image/x-icon.png') }}"
+            height="30"
+            alt="logo"
+          />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mynavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mynavbar">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('code') }}">Code</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Upload Center (YOUR CSS) -->
+    <div id="center">
+      <img
+        src="{{ url_for('static', filename='image/upload.png') }}"
+        style="height: 80px; opacity: 0.2; margin-bottom: 10px"
+        alt="upload"
+      />
+
+      <form
+        action="{{ url_for('prediction') }}"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <input
+          type="file"
+          id="file"
+          name="file"
+          accept=".jpg,.jpeg,.png"
+          required
+        />
+
+        <label for="file">Upload an image</label>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+  </body>
+</html>
