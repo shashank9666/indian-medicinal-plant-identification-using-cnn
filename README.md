@@ -28,27 +28,6 @@ Using newer or incompatible versions **may cause runtime errors or model loading
 
 ---
 
-## 🗂️ Project Structure
-/
-│
-├── app.py
-├── Model_Mobilenet.h5
-├── requirements.txt
-│
-├── static/
-│ ├── css/
-│ ├── js/
-│ └── image/
-│
-└── templates/
-├── index.html
-├── home.html
-├── prediction.html
-└── code.html
-
-
----
-
 ## 🛠️ Installation & Setup
 
 ### 1️⃣ Clone the repository
