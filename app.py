@@ -4,6 +4,8 @@ from tensorflow.keras.models import load_model
 import numpy as np
 import os
 from io import BytesIO
+import tensorflow as tf
+tf.config.set_visible_devices([], 'GPU')
 
 app = Flask(__name__)
 
